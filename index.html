@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Something</title>
+    <style>
+      canvas {
+        border: solid 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script type="module">
+      fetch("web_handmade.wasm")
+        .then(response => response.arrayBuffer())
+        .then(bytes => WebAssembly.instantiate(bytes))
+        .then(({ instance }) => {
+          console.log("The answer is: ", instance.exports.add(1, 2));
+        })
+        .catch(err => {
+          console.error("Error in setting up maybe: ", err);
+        })
+    </script>
+  </body>
+</html>

@@ -60,18 +60,6 @@ LRESULT CALLBACK MainWindowCallback(
 }
 
 int WINAPI wWinMain(HINSTANCE Instance, HINSTANCE ignored, PWSTR CmdLineArgs, int StartupMode) {
-  // typedef struct tagWNDCLASSA {
-  //   UINT      style;
-  //   WNDPROC   lpfnWndProc;
-  //   int       cbClsExtra;
-  //   int       cbWndExtra;
-  //   HINSTANCE hInstance;
-  //   HICON     hIcon;
-  //   HCURSOR   hCursor;
-  //   HBRUSH    hbrBackground;
-  //   LPCSTR    lpszMenuName;
-  //   LPCSTR    lpszClassName;
-  // } 
   WNDCLASSA WindowClass = {};
   WindowClass.style = CS_OWNDC|CS_HREDRAW|CS_VREDRAW;
   WindowClass.lpfnWndProc = MainWindowCallback;
